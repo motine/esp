@@ -16,7 +16,7 @@ function Router:handle(method, path, params)
   local routeInfo = self.routes[path]
   if routeInfo == nil then
     print("could not find handler for " .. path)
-    return
+    return "404 Not Found", nil, "<h1>404 - Not found</h1>"
   end
 
   -- call handler

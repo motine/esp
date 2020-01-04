@@ -27,13 +27,12 @@ end
 function Server:handleConnection(conn, payload)
   -- dispatch request via router
   local method, path, params = self:parseRequest(payload)
-  local response = self.router:handle(method, path, params)
-  local status = "200 OK"
-  if response == nil then
-    code = "404 Not Found"
-    response = "<h1>404 - Not found</h1>"
+  local status, header, response = self.router:handle(method, path, params)
+  if header == nil then
+    header = ""
   end
-  conn:send("HTTP/1.1 " .. status .. "\nContent-Type: text/html\nConnection: Closed\n\n" .. response)
+
+  conn:send("HTTP/1.1 " .. status .. "\nContent-Type: text/html\nConnection: Closed\n" .. header .. "\n\n" .. response)
 end
 
 function Server:start()
