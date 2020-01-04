@@ -1,4 +1,8 @@
-# ESP8266 Actor
+# MoHa - Motine Home Automation
+
+- ESP8266
+
+Access via: http://moha-lamp1.fritz.box/
 
 ```bash
 # setup
