@@ -1,6 +1,7 @@
 # MoHA - Motine Home Automation
 
 This project is not for the public. It is not fully documented yet.
+The goal is to just to play around a little with the ESP and check out how easy it is to use it for home automation.
 
 ## Getting started
 
