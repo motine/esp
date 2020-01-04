@@ -49,7 +49,7 @@ end
 
 -- renders the template and the layout (if present)
 function Template:render(vars)
-  page = self:render_template(self.source, vars)
+  local page = self:render_template(self.source, vars)
 
   if self.layout_source == nil then
     return page

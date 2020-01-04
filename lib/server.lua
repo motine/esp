@@ -33,6 +33,7 @@ function Server:handleConnection(conn, payload)
   end
 
   conn:send("HTTP/1.1 " .. status .. "\nContent-Type: text/html\nConnection: Closed\n" .. header .. "\n\n" .. response)
+  collectgarbage()
 end
 
 function Server:start()
@@ -40,10 +41,11 @@ function Server:start()
   srv = net.createServer(net.TCP)
   srv:listen(80, function(conn)
     conn:on("receive", function(conn, payload)
-      handleFun = function() self:handleConnection(conn, payload) end
-      errFun = function(err) conn:send("HTTP/1.1 500\n\n" .. "<h1>500 - Server Error</h1><code>" .. err .. "</code>") end
+      local handleFun = function() self:handleConnection(conn, payload) end
+      local errFun = function(err) conn:send("HTTP/1.1 500\n\n" .. "<h1>500 - Server Error</h1><code>" .. err .. "</code>") end
       xpcall(handleFun, errFun)
     end)
+    
     conn:on("sent", function(conn) conn:close() end)
   end)
 end
