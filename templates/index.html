@@ -1,3 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoHA - Motine Home Automation</title>
+<style>
+
+
+body {
+ font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+/* https://coolors.co/40f99b-61707d-9d69a3-f5fbef-e85d75 */
+
+:root {
+  --green: #2fb671;
+  --green-light: #40f99b;
+  --grey: #61707d;
+  --grey-light: #b7bec3;
+  --grey-mid: #8c97a0;
+  --purple: #9d69a3;
+  --purple-light: #c09fc4;
+  --beige: #f5fbef;
+  --pink: #e85d75;
+  --blue: #476eb2;
+
+  --radius: 5px;
+  --radius-mid: 10px;
+  --radius-big: 15px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+/*   background-image: linear-gradient(0deg, var(--purple), var(--purple-light)); */
+  background-image: linear-gradient(0deg, rgba(157, 105, 163, 0.9), var(--purple-light)), url(https://i.picsum.photos/id/166/400/600.jpg);
+  background-size: cover, cover;
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto 1fr 15%;
+  justify-items: stretch;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+h1 {
+  color: var(--grey);
+  background-color: #fff;
+  margin: 0 20%;
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: 0 0 .5rem var(--grey);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.actors {
+  color: var(--grey);
+  background-color: var(--grey);
+  
+  align-self: center;
+  justify-self: stretch;
+  margin: auto;
+  width: 80%;
+  max-width: 500px;
+
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 0 .5rem var(--grey);
+  border-radius: var(--radius);
+}
+
+.switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 1px;
+  border-radius: var(--radius-big);
+  overflow: hidden;
+}
+
+.switch__on, .switch__off {
+  display: block;
+  padding: 1rem;
+  transition: box-shadow 1s;
+}
+
+.switch__off {
+  box-shadow: inset -2px 0 var(--radius-mid) 0 var(--grey);
+}
+.switch__on {
+  box-shadow: inset 2px 0 var(--radius) 0 var(--grey);
+}
+
+.switch--ON .switch__on {
+  background-color: var(--green);
+  color: #fff;
+  font-weight: 700;
+}
+
+.switch--ON .switch__off {
+  background-color: #fff;
+}
+
+.switch--OFF .switch__on {
+  background-color: #fff;
+}
+
+.switch--OFF .switch__off {
+  background-color: var(--grey-light);
+  color: #fff;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<h1>MoHA</h1>
+
 <div class="actors">
   <div class="switch switch--{{ PIN1_state }}">
     <a class="switch__off" href="/PIN1/off">OFF</a>
@@ -8,3 +136,8 @@
     <a class="switch__on" href="/PIN2/on">ON</a>
   </div>
 </div>
+
+<footer></footer>
+
+</body>
+</html>
