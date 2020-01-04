@@ -1,9 +1,13 @@
 dofile("lib/router.lua")
 dofile("lib/server.lua")
+dofile("lib/template.lua")
 
 function handleIndex(params)
-  -- print('param x:' .. params["myparam"])
-  return "<h1>Hello!</h1>"
+  local template = Template:new(nil, "index.html", "layout.html")
+  local vars = {}
+  vars["some_var"] = "SOME VAR"
+  
+  return template:render(vars)
 end
 
 mainRouter = Router:new()
