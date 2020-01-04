@@ -44,7 +44,6 @@ mainRouter = Router:new()
 mainRouter:addRoute("/", handleIndex)
 
 for pinName, pinNo in pairs(PINS) do -- retrieve status of the pins
-  print(pinName)
   mainRouter:addRoute("/" .. pinName .. "/on",  function(params) return handleSwitch(params, pinNo, gpio.LOW) end)
   mainRouter:addRoute("/" .. pinName .. "/off", function(params) return handleSwitch(params, pinNo, gpio.HIGH) end)
 end

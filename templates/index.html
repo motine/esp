@@ -1,6 +1,10 @@
-<p>
-  Switch 1: <a href="/PIN1/on">ON</a> | <a href="/PIN1/off">OFF</a> {{ PIN1_state }}
-</p>
-<p>
-  Switch 2: <a href="/PIN2/on">ON</a> | <a href="/PIN2/off">OFF</a> {{ PIN2_state }}
-</p>
+<div class="actors">
+  <div class="switch switch--{{ PIN1_state }}">
+    <a class="switch__off" href="/PIN1/off">OFF</a>
+    <a class="switch__on" href="/PIN1/on">ON</a>
+  </div>
+  <div class="switch switch--{{ PIN2_state }}">
+    <a class="switch__off" href="/PIN2/off">OFF</a>
+    <a class="switch__on" href="/PIN2/on">ON</a>
+  </div>
+</div>
