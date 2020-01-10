@@ -8,6 +8,7 @@ The goal is to just to play around a little with the ESP and check out how easy 
 ```bash
 # useful commands
 nodemcu-tool terminal # now reset the device and see what comes up
+nodemcu-tool upload --run file.lua
 nodemcu-tool upload -k *.lua
 nodemcu-tool reset && sleep 0.1
 ```
