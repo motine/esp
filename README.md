@@ -5,19 +5,10 @@ The goal is to just to play around a little with the ESP and check out how easy 
 
 ## Getting started
 
-Assuming you have an ESP8266 ready to go and have installed `nodemcu-tool`. If not see below.
-
-<!-- Access via: http://moha-lamp1.fritz.box/ -->
-
 ```bash
-# setup
-cp credentials.lua.example credentials.lua
-vim credentials # change your credentials
-
 # useful commands
 nodemcu-tool terminal # now reset the device and see what comes up
-nodemcu-tool upload -k *.lua lib/*.lua templates/*
-# now reset the ESP and it should show up on your network
+nodemcu-tool upload -k *.lua
 nodemcu-tool reset && sleep 0.1
 ```
 
