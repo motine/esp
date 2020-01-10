@@ -15,12 +15,13 @@ cp credentials.lua.example credentials.lua
 vim credentials # change your credentials
 
 # useful commands
+nodemcu-tool terminal # now reset the device and see what comes up
 nodemcu-tool upload -k *.lua lib/*.lua templates/*
 # now reset the ESP and it should show up on your network
 nodemcu-tool reset && sleep 0.1
 ```
 
-## Initial setup
+## ESP 8266 - Initial setup
 
 derived from [this article](https://medium.com/@bass.pj/nodemcu-esp8266-getting-started-with-arduino-on-macos-1cdc61565496).
 Check this the [NodeMCU Getting Started](https://nodemcu.readthedocs.io/en/master/getting-started/) Guide for more info.
@@ -47,3 +48,32 @@ Check this the [NodeMCU Getting Started](https://nodemcu.readthedocs.io/en/maste
 1. Download test script `wget https://raw.githubusercontent.com/AndiDittrich/NodeMCU-Tool/master/helloworld.lua`
 1. Upload test code `nodemcu-tool --port=/dev/cu.SLAB_USBtoUART upload helloworld.lua`
 1. Run test code `nodemcu-tool --port=/dev/cu.SLAB_USBtoUART run helloworld.lua`
+
+## ESP 32 - Initial setup
+
+The setup is very similar to the ESP 8266...
+
+## Build the image
+
+Follow [this tutorial](https://nodemcu.readthedocs.io/en/dev-esp32/build/).
+
+```bash
+git clone --branch dev-esp32 --recurse-submodules https://github.com/nodemcu/nodemcu-firmware.git nodemcu-firmware-esp32
+```
+
+Follow [these instructions](https://hub.docker.com/r/marcelstoer/nodemcu-build/)
+
+```bash
+docker run --rm -ti -v (pwd):/opt/nodemcu-firmware:delegated marcelstoer/nodemcu-build configure-esp32
+# select NodeMCU modules (e.g. JSON & Touch)
+docker run --rm -ti -v (pwd):/opt/nodemcu-firmware:delegated marcelstoer/nodemcu-build build
+```
+
+Then flash:
+
+```bash
+esptool.py --port /dev/cu.SLAB_USBtoUART --baud 115200 erase_flash
+esptool.py --port /dev/cu.SLAB_USBtoUART --baud 115200 write_flash -fm dio 0x0000 nodemcu_dev-esp32_20200105-1946.bin
+# you may have to press the boot button
+```
+
