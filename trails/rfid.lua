@@ -1,0 +1,6 @@
+-- READ BEFORE DOING STUFF:
+-- https://www.youtube.com/watch?v=U7DM8_piRBA  ||  https://github.com/abobija/rfid32/blob/master/rfid32.lua
+-- https://nodemcu.readthedocs.io/en/dev-esp32/modules/spi/
+-- https://www.arduino.cc/en/Reference/SPI
+-- https://github.com/ondryaso/pi-rc522#sectors-blocks
+-- https://github.com/capella-ben/LUA_RC522/blob/master/RC522.lua
