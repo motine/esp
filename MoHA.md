@@ -14,7 +14,16 @@
 
 Paths:
 
+each action can be triggered with a get (to keep things simple for now)
+each device lists its actions via html (`/`) and via json (`moha/v1/`).
+
 ```json
+# path: /
+<html>
+switch 1: <a href="/moha/v1/switch1/on">on</a> | <a href="/moha/v1/switch1/on">off</a>
+switch 2: <a href="/moha/v1/switch2/on">on</a> | <a href="/moha/v1/switch2/on">off</a>
+</html>
+
 # path: /moha/v1/
 {
   "device": {
@@ -36,11 +45,11 @@ Paths:
       }
     ]
 }
-# path: /status
+# path: /moha/v1/switch1/status
 {
   "status": "on"
 }
-# path: /on | /off
+# path: /moha/v1/switch1/on | /off
 {
   "status": "on"
 }
