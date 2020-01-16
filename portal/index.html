@@ -9,16 +9,16 @@
 <h1>MoHA</h1>
 
 <div id="app" class="actors">
-  <actor-switch uuid="12345"></actor-switch>
-  <actor-switch uuid="12346"></actor-switch>
+  <device v-for="device in devices" :key="device.device.uuid" :config="device.device" :skills="device.skills"></device>
 </div>
 
 <footer></footer>
 
 <script type="text/javascript" src="vendor/vue.js"></script>
 
-<script type="text/javascript" src="lib/device.js"></script>
+<script type="text/javascript" src="components/device.js"></script>
 
+<script type="text/javascript" src="components/skill-base.js"></script>
 <script type="text/javascript" src="components/skills/actor-switch.js"></script>
 <link rel="stylesheet" type="text/css" href="components/skills/actor-switch.css">
 

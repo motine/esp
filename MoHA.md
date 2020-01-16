@@ -27,23 +27,23 @@ switch 2: <a href="/moha/v1/switch2/on">on</a> | <a href="/moha/v1/switch2/on">o
 # path: /moha/v1/
 {
   "device": {
+    "uuid": "d54e8c2d-c84e-456b-8e5b-87455d43195f",
     "platform": "ESP8266",
     "comment": "built into the red box"
   },
-  "skills":
-    [
-      {
-        "uuid": "b82ef140-c589-49bb-81fd-7c160be2ad16",
-        "comment": "hard wired to the relay output 3",
-        "type": "switch",
-        "capabilities": ["http", "on/off"], // "brightness", "timer", "sleep-mode"
-        "actions" : {
-          "status":  { "http-path": "/moha/v1/switch1/status" },
-          "on":  { "http-path": "/moha/v1/switch1/on" },
-          "off": { "http-path": "/moha/v1/switch1/off" }
-        }
+  "skills": [
+    {
+      "uuid": "b82ef140-c589-49bb-81fd-7c160be2ad16",
+      "comment": "hard wired to the relay output 3",
+      "type": "actor-switch",
+      "capabilities": ["http", "on/off"], // "brightness", "timer", "sleep-mode"
+      "actions" : {
+        "status":  { "http-path": "/moha/v1/switch1/status" },
+        "on":  { "http-path": "/moha/v1/switch1/on" },
+        "off": { "http-path": "/moha/v1/switch1/off" }
       }
-    ]
+    }
+  ]
 }
 # path: /moha/v1/switch1/status
 {
