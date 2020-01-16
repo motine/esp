@@ -36,7 +36,7 @@ switch 2: <a href="/moha/v1/switch2/on">on</a> | <a href="/moha/v1/switch2/on">o
       "uuid": "b82ef140-c589-49bb-81fd-7c160be2ad16",
       "comment": "hard wired to the relay output 3",
       "type": "actor-switch",
-      "capabilities": ["http", "on/off"], // "brightness", "timer", "sleep-mode"
+      "capabilities": ["on/off"], // "brightness", "timer", "sleep-mode"
       "actions" : {
         "status":  { "http-path": "/moha/v1/switch1/status" },
         "on":  { "http-path": "/moha/v1/switch1/on" },

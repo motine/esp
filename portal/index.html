@@ -9,7 +9,7 @@
 <h1>MoHA</h1>
 
 <div id="app" class="actors">
-  <device v-for="device in devices" :key="device.device.uuid" :config="device.device" :skills="device.skills"></device>
+  <device v-for="device in devices" :key="device.config.uuid" :host="device.host" :config="device.config" :skills="device.skills"></device>
 </div>
 
 <footer></footer>

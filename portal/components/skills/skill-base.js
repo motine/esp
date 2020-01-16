@@ -1,7 +1,10 @@
 const skillBase = {
   methods: {
-    sendToComponent(uuid, payload) { // this method will move to the component
-      console.log("TODO SEND OUT!", uuid, payload);
+    request(host, path, payload = null) {
+      console.log("TODO SEND OUT!", host, path, payload);
+      return { status: "on" }
+      // parse JSON
+      // raise errors (!= 200)
     }
   }
 };

@@ -5,19 +5,19 @@ const app = new Vue({
     return { devices: [] }
   },
   methods: {
-    loadFromDeviceUrls(urls) {
+    loadDevices(hosts) {
       // TODO use actual urls
-      for (const url of urls) {
-        console.log("TODO use actual URL", url)
+      for (const host of hosts) {
+        console.log("TODO use actual host", host)
         fetch("../tmp-response.json")
           .then(data => data.json())
-          .then(json => this.devices.push(json));
+          .then(json => this.devices.push({ host: host, config: json.device, skills: json.skills }));
       }
     }
   },
   mounted() {
     fetch("../config.json")
       .then(data => data.json())
-      .then(json => this.loadFromDeviceUrls(json.device_urls))
+      .then(json => this.loadDevices(json.device_hosts))
   }
 })
