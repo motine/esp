@@ -1,7 +1,8 @@
 # MoHA
 
 - A device is a wifi node (typically an ESP).
-- A component is either an actor or a sensor (e.g. a switch or an LED)
+- A device contains many skills
+- A skill can be an actor or a sensor (e.g. a switch or an LED)
 
 115200
 
@@ -20,7 +21,7 @@ Paths:
     "platform": "ESP8266",
     "comment": "built into the red box"
   },
-  "components":
+  "skills":
     [
       {
         "uuid": "b82ef140-c589-49bb-81fd-7c160be2ad16",

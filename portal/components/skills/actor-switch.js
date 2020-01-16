@@ -15,7 +15,7 @@ Vue.component('actor-switch', {
   },
   methods: {
     updateState(state) { // could also done via https://vuejs.org/v2/guide/computed.html#Computed-Setter
-      response = DeviceManager.sendToComponent(this.uuid, {
+      response = Device.sendToComponent(this.uuid, {
         someJSON: true,
         state: this.state
       });
