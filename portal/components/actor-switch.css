@@ -1,0 +1,40 @@
+.actor-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 1px;
+  border-radius: var(--radius-big);
+  overflow: hidden;
+}
+
+.actor-switch__on, .actor-switch__off {
+  display: block;
+  padding: 1rem;
+  transition: box-shadow 1s;
+}
+
+.actor-switch__off {
+  box-shadow: inset -2px 0 var(--radius-mid) 0 var(--grey);
+}
+.actor-switch__on {
+  box-shadow: inset 2px 0 var(--radius) 0 var(--grey);
+}
+
+.actor-switch--ON .actor-switch__on {
+  background-color: var(--green);
+  color: #fff;
+  font-weight: 700;
+}
+
+.actor-switch--ON .actor-switch__off {
+  background-color: #fff;
+}
+
+.actor-switch--OFF .actor-switch__on {
+  background-color: #fff;
+}
+
+.actor-switch--OFF .actor-switch__off {
+  background-color: var(--grey-light);
+  color: #fff;
+  font-weight: 600;
+}

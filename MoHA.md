@@ -7,8 +7,9 @@
 
 ## Actor implementation
 
-ESP registers via mdns
-Ruby server is client
+- ESP registers via mdns
+- Send all with `Access-Control-Allow-Origin: *`
+- Browser is the client
 
 Paths:
 
