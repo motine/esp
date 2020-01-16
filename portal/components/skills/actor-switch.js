@@ -10,14 +10,19 @@ Vue.component('actor-switch', {
     <div class="actor-switch" :class="'actor-switch--' + state" :title="config.uuid">
       <a class="actor-switch__off" @click.prevent="updateState('OFF')">OFF</a>
       <a class="actor-switch__on" @click.prevent="updateState('ON')">ON</a>
-    </div>
-    `,
+    </div>`,
   data() {
     return {
       state: 'OFF'
     };
   },
+  mounted() {
+    this.readState();
+  },
   methods: {
+    readState() {
+      console.log("TODO retrieve initial state");
+    },
     updateState(state) { // could also done via https://vuejs.org/v2/guide/computed.html#Computed-Setter
       if (state == this.state) { return; }
       response = this.sendToComponent(this.config.uuid, {
@@ -26,6 +31,5 @@ Vue.component('actor-switch', {
       });
       this.state = state; // TODO use response for new state
     }
-    // TODO retrieve initial state
   }
 })
