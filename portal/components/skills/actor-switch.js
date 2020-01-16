@@ -1,3 +1,6 @@
+
+SkillRegistry.registerMapping("switch", "actor-switch");
+
 Vue.component('actor-switch', {
   mixins: [skillBase],
   props: {

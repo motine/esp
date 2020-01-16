@@ -1,8 +1,3 @@
-
-SKILL_TYPE_TO_COMPONENT_NAME = {
-  "switch": "actor-switch"
-}
-
 Vue.component('device', {
   props: {
     config: { type: Object, required: true },
@@ -18,13 +13,7 @@ Vue.component('device', {
   },
   methods: {
     skillComponent(index) {
-      const retrievedName = this.skills[index].type;
-      const mappedName = SKILL_TYPE_TO_COMPONENT_NAME[retrievedName]
-      if (mappedName) {
-        return mappedName;
-      } else {
-        console.error(`Could not find mapping for the skill type retrieved from the device: ${retrievedName}`)
-      }
+      return SkillRegistry.componentNameFor(this.skills[index].type);
     }
   }
 })
