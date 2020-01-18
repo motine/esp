@@ -63,7 +63,7 @@ h1 {
   width: 80%;
   max-width: 500px;
 
-  padding: 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   text-align: center;
   box-shadow: 0 0 .5rem var(--grey);
   border-radius: var(--radius);

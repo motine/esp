@@ -1,4 +1,5 @@
 .device {}
 .device__caption {
   color: var(--grey-light);
+  padding: 1rem 0 .25rem 0;
 }
