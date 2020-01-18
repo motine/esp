@@ -14,7 +14,7 @@ const app = new Vue({
     }
   },
   mounted() {
-    fetch("../config.json")
+    fetch("config.json")
       .then(data => data.json())
       .then(json => this.loadDevices(json.device_hosts))
   }
