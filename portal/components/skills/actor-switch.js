@@ -1,5 +1,5 @@
 
-SkillRegistry.registerMapping("switch", "actor-switch");
+SkillRegistry.registerMapping("actor-switch", "actor-switch");
 
 // Example config:
 // {
@@ -35,13 +35,13 @@ Vue.component('actor-switch', {
   },
   methods: {
     readStatus() {
-      const response = this.request(this.host, this.config.actions.status["http-path"], null);
-      this.status = response.status.toUpperCase();
+      this.request(this.host, this.config.actions.status["http-path"], null)
+        .then( (json) => { this.status = json.status.toUpperCase() } );
     },
     changeStatus(status) { // could also done via https://vuejs.org/v2/guide/computed.html#Computed-Setter
       if (status == this.status) { return; }
-      const response = this.request(this.host, this.config.actions[`${status.toLowerCase()}`]["http-path"], null);
-      this.status = response.status.toUpperCase();
+      this.request(this.host, this.config.actions[`${status.toLowerCase()}`]["http-path"], null)
+        .then( (json) => { this.status = json.status.toUpperCase() } );
     }
   }
 })

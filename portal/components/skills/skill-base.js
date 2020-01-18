@@ -1,10 +1,12 @@
 const skillBase = {
   methods: {
+    // returns a promise
     request(host, path, payload = null) {
-      console.log("TODO SEND OUT!", host, path, payload);
-      return { status: "on" }
-      // parse JSON
-      // raise errors (!= 200)
+      if (payload) { console.error("PAYLOAD NOT SUPPORTED YET!"); }
+
+      return fetch(`http://${host}${path}`)
+        .then(data => data.json())
+        .catch(error => console.error("ERROR on request from within a skill: ", error))
     }
   }
 };
