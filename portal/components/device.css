@@ -1,0 +1,4 @@
+.device {}
+.device__caption {
+  color: var(--grey-light);
+}

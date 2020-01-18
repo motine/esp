@@ -6,6 +6,7 @@ Vue.component('device', {
   },
   template: `
     <div class="device">
+      <div class="device__caption">{{ this.config.comment}}</div>
       <component v-for="(skill, index) in skills" v-bind:is="skillComponent(index)" :key="skill.uuid" :host="host" :config="skill"></component>
     </div>
     `,
