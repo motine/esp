@@ -28,7 +28,7 @@ html, body {
 body {
 /*   background-image: linear-gradient(0deg, var(--purple), var(--purple-light)); */
  font-family: "Avenir Next", "Avenir", sans-serif;
-  background-image: linear-gradient(0deg, rgba(157, 105, 163, 0.85), var(--purple-light)), url(../vendor/background.jpg);
+  background-image: linear-gradient(0deg, rgba(157, 105, 163, 0.85), var(--purple-light)), url(../assets/background.jpg);
   background-size: cover, cover;
   text-align: center;
   display: grid;
