@@ -5,7 +5,7 @@ SkillRegistry.registerMapping("actor-switch", "actor-switch");
 // {
 //   "uuid": "b82ef140-c589-49bb-81fd-7c160be2ad16",
 //   "comment": "hard wired to the relay output 3",
-//   "type": "switch",
+//   "type": "actor-switch",
 //   "capabilities": ["on/off"],
 //   "actions" : {
 //     "status":  { "http-path": "/moha/v1/switch1/status" },
