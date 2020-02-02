@@ -1,4 +1,4 @@
-# ESP Relay API
+# ESP Device API
 
 please see `relais-webserver` and the top level `README.md` for more info.
 

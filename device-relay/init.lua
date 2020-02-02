@@ -1,1 +1,1 @@
-../device-shared/init.lua
+../device-shared/init-8266.lua
